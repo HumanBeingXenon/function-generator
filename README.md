@@ -80,10 +80,10 @@ DDS(Direct Digital Synthesizer) 即直接数字合成器，是一种新型的频
 * 频率比 1:2 的正弦波与锯齿波
 * 频率比 1:4 的锯齿波与锯齿波
 
-<img src="pictures/sin&sin_Small.png" width="350" height="260"/>
-<img src="pictures/sin&sin2_Small.png" width="350" height="260"/>
-<img src="pictures/sin&saw2_Small.png" width="350" height="260"/>
-<img src="pictures/saw&saw4_Small.png" width="350" height="260"/>
+<img src="pictures/sin%26sin_Small.png" width="350" height="260"/>
+<img src="pictures/sin%26sin2_Small.png" width="350" height="260"/>
+<img src="pictures/sin%26saw2_Small.png" width="350" height="260"/>
+<img src="pictures/saw%26saw4_Small.png" width="350" height="260"/>
 
 ## 体会与反思
 这个项目有做得不够好的地方。从上面的图可以看到，示波器中的波形都比较粗，噪声信号比较大，可能是因为我没有将 DAC 输出的模拟信号经过低通滤波器进行平滑才输出到示波器，个人能力和条件有限。实际操作的时候我发现，当输出波形的频率较低的时候（比如 100Hz），输出的波形会完全失真，可以说调节频率范围的功能做得比较有限，不能进行频率细调。
