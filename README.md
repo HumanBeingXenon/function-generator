@@ -50,8 +50,7 @@ DDS(Direct Digital Synthesizer) 即直接数字合成器，是一种新型的频
 ![](pictures/时序仿真.png)
 可能是因为工作频率太高，时序仿真的结果是完全异常的。
 
-
-### 实机测试
+### Signal Tap II 采样测试
 将程序烧入 FPGA 中，使用 Signal Tap II 进行采样：
 ![](pictures/SignalTap.png)
 采样结果如下：
@@ -59,3 +58,32 @@ DDS(Direct Digital Synthesizer) 即直接数字合成器，是一种新型的频
 ![](pictures/SignalTap_triangle.png)
 ![](pictures/SignalTap_sin.png)
 ![](pictures/SignalTap_square.png)
+
+## 实验结果（示波器波形显示及李萨如图形）
+### 示波器波形显示
+将 FPGA 实验板输出的模拟信号接入示波器，观察波形。  
+<img src="pictures/正弦波_Small.png" width="350" height="260"/>
+<img src="pictures/三角波_Small.png" width="350" height="260"/>
+<img src="pictures/锯齿波_Small.png" width="350" height="260"/>
+<img src="pictures/方波_Small.png" width="350" height="260"/>  
+
+下面的图片展示的是四种不同频率的正弦波，频率逐渐翻倍。   
+<img src="pictures/正弦波_Small.png" width="350" height="260"/>
+<img src="pictures/正弦波2_Small.png" width="350" height="260"/>
+<img src="pictures/正弦波3_Small.png" width="350" height="260"/>
+<img src="pictures/正弦波4_Small.png" width="350" height="260"/>  
+
+### 李萨如图形
+下图展示的是几种李萨如图形分别是：  
+* 频率比 1:1 的正弦波与正弦波
+* 频率比 1:2 的正弦波与正弦波
+* 频率比 1:2 的正弦波与锯齿波
+* 频率比 1:4 的锯齿波与锯齿波
+
+<img src="pictures/sin&sin_Small.png" width="350" height="260"/>
+<img src="pictures/sin&sin2_Small.png" width="350" height="260"/>
+<img src="pictures/sin&saw2_Small.png" width="350" height="260"/>
+<img src="pictures/saw&saw4_Small.png" width="350" height="260"/>
+
+## 体会与反思
+这个项目有做得不够好的地方。从上面的图可以看到，示波器中的波形都比较粗，噪声信号比较大，可能是因为我没有将 DAC 输出的模拟信号经过低通滤波器进行平滑才输出到示波器，个人能力和条件有限。实际操作的时候我发现，当输出波形的频率较低的时候（比如 100Hz），输出的波形会完全失真，可以说调节频率范围的功能做得比较有限，不能进行频率细调。
